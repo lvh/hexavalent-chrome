@@ -1,0 +1,19 @@
+{:paths ["src" "resources"]
+ :deps {org.clojure/clojure {:mvn/version "1.10.3"}
+        org.clojure/java.jdbc {:mvn/version "0.7.12"}
+        org.xerial/sqlite-jdbc {:mvn/version "3.36.0.3"}
+        babashka/fs {:mvn/version "0.1.2"}
+        de.swiesend/secret-service {:mvn/version "1.7.0"}}
+ :aliases
+ {:test
+  {:main-opts ["-m" "kaocha.runner"]
+   :extra-paths ["test"]
+   :extra-deps {lambdaisland/kaocha {:mvn/version "1.60.945"}
+                org.clojure/test.check {:mvn/version "RELEASE"}}}
+  :uberjar
+  {:replace-deps {com.github.seancorfield/depstar {:mvn/version "2.0.216"}}
+   :exec-fn hf.depstar/uberjar
+   :exec-args {:aot true
+               :jar "hexavalent-chrome.jar"
+               :main-class "io.lvh.hexavalent-chrome"
+               :sync-pom true}}}}
