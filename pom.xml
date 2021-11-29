@@ -30,6 +30,31 @@
       <artifactId>clojure</artifactId>
       <version>1.10.3</version>
     </dependency>
+    <dependency>
+      <groupId>org.clojure</groupId>
+      <artifactId>java.jdbc</artifactId>
+      <version>0.7.12</version>
+    </dependency>
+    <dependency>
+      <groupId>org.xerial</groupId>
+      <artifactId>sqlite-jdbc</artifactId>
+      <version>3.36.0.3</version>
+    </dependency>
+    <dependency>
+      <groupId>babashka</groupId>
+      <artifactId>fs</artifactId>
+      <version>0.1.2</version>
+    </dependency>
+    <dependency>
+      <groupId>de.swiesend</groupId>
+      <artifactId>secret-service</artifactId>
+      <version>1.7.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.github.clj-easy</groupId>
+      <artifactId>graal-build-time</artifactId>
+      <version>0.1.4</version>
+    </dependency>
   </dependencies>
   <build>
     <sourceDirectory>src</sourceDirectory>
@@ -38,10 +63,6 @@
     <repository>
       <id>clojars</id>
       <url>https://repo.clojars.org/</url>
-    </repository>
-    <repository>
-      <id>sonatype</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
     </repository>
   </repositories>
   <distributionManagement>

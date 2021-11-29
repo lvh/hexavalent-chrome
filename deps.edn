@@ -3,7 +3,9 @@
         org.clojure/java.jdbc {:mvn/version "0.7.12"}
         org.xerial/sqlite-jdbc {:mvn/version "3.36.0.3"}
         babashka/fs {:mvn/version "0.1.2"}
-        de.swiesend/secret-service {:mvn/version "1.7.0"}}
+        de.swiesend/secret-service {:mvn/version "1.7.0"}
+
+        com.github.clj-easy/graal-build-time {:mvn/version "0.1.4"}}
  :aliases
  {:test
   {:main-opts ["-m" "kaocha.runner"]
