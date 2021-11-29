@@ -10,6 +10,8 @@
    (java.util Arrays))
   (:gen-class))
 
+(set! *warn-on-reflection* true)
+
 (defn ^:private get-root-secret
   []
   (let [coll (SimpleCollection.)
