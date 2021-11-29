@@ -1,10 +1,37 @@
 # hexavalent-chrome
 
-> Because of quirks in the gnome libsecret API, Chrome needs to store a dummy entry to guarantee that this keyring was properly unlocked. More details at http://crbug.com/660005.
+Sometimes (ostensibly only on Linux and when using SecretService), Chrome's
+builtin password manager and its associated syncing will randomly break. This
+turns out to be related to malformed encrypted password entries.
+
+This tool finds your Chrome profile, attempts to decrypt all the entires, and
+deletes ones that fail.
+
+This probably should have some sort of backup functionality, use at your own
+risk etc etc :)
+
+## Misc notes
+
+### The configuration directory
+
+Right now, this is hardcoded to be `~/.config/google-chrome`; I don't use
+beta/canary enough to trigger this, and it only seems possible to trigger on
+Linux. Would be pretty easy to upgrade. Canonical docs are at:
 
 https://chromium.googlesource.com/chromium/src/+/HEAD/docs/user_data_dir.md
 
-FIXME: my new application.
+I didn't find where Chrome stores the list of profiles, so I just look for
+directories that have a `Login Data` file (a SQLite database). Didn't check if
+that's just what Chrome does too.
+
+### SecretService is not good
+
+I found this gem in my default keyring:
+
+> Because of quirks in the gnome libsecret API, Chrome needs to store a dummy
+> entry to guarantee that this keyring was properly unlocked. More details at
+> http://crbug.com/660005.
+
 
 ## Installation
 
