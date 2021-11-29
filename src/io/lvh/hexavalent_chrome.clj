@@ -100,3 +100,7 @@
                (->> ids (str/join ", "))))
       (jdbc/with-db-transaction [t db]
         (doseq [id ids] (jdbc/delete! db :logins ["id = ?" id]))))))
+
+(defn -main
+  [& args]
+  (fix!))
