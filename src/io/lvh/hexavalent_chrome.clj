@@ -7,6 +7,7 @@
    (org.freedesktop.secret.simple SimpleCollection)
    (javax.crypto SecretKeyFactory Cipher)
    (javax.crypto.spec PBEKeySpec SecretKeySpec IvParameterSpec)
+   (java.security Key)
    (java.util Arrays))
   (:gen-class))
 
@@ -37,7 +38,7 @@
         (SecretKeySpec. "AES"))))
 
 (defn decrypt
-  [^bytes key ^bytes ctext]
+  [^Key key ^bytes ctext]
   (let [cipher (doto (Cipher/getInstance "AES/CBC/PKCS5Padding")
                  (.init Cipher/DECRYPT_MODE key the-iv))]
     (.doFinal cipher ctext)))
