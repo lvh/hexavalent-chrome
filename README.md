@@ -32,6 +32,12 @@ I found this gem in my default keyring:
 > entry to guarantee that this keyring was properly unlocked. More details at
 > http://crbug.com/660005.
 
+### Integrate `refl`
+
+See https://github.com/borkdude/refl
+
+Right now I manually tweak the reflection JSON. Would be cool if that wasn't
+necessary :)
 
 ## Installation
 
